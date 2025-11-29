@@ -79,7 +79,7 @@ def prepare_training_dataset() -> str:
 
     print(f"  ✓ Train: {train_cat} gatos, {train_dog} cachorros")
     print(f"  ✓ Val:   {val_cat} gatos, {val_dog} cachorros")
-
+    print(f"  ✓ Path: {yolo_dataset_path}")
     return str(yolo_dataset_path)
 
 def train_model(dataset_path: str) -> YOLO:
@@ -263,10 +263,10 @@ def main():
         print(f"Dispositivo: CPU")
 
     # Prepara dataset de treinamento
-    dataset_path = prepare_training_dataset()
+    # dataset_path = prepare_training_dataset()
 
     # Treina modelo
-    model = train_model(dataset_path)
+    model = train_model("archive")
 
     # Avalia nas 30 simulações
     all_results = evaluate_all_simulations(model)
